@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+    stages {
+        stage('Code'){
+            steps{
+                echo "Started - Pulling code from Github repo"
+                git credentialsId: 'jenkin-creds', url: 'https://github.com/komalanandpandey/react_django_demo_app'
+                echo "Completed - Pulling code from Github repo"
+                 }
+             }
+        stage('Build'){
+            steps{
+                echo "Started - Building application"
+            
+                echo "Completed - Building application"
+                 }
+             }
+        stage('Test'){
+            steps{
+                echo "Started - Testing application"
+            
+                echo "Completed - Testing application"
+                 }
+             }
+        stage('Deploy'){
+            steps{
+                echo "Started -  Application Deployement"
+            
+                echo "Completed - Application Deployment"
+                 }
+             }
+    }
+}
